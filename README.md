@@ -20,5 +20,6 @@ Ele utiliza a [GitHub Search Issues API](https://docs.github.com/en/rest/search/
 - Tradução da aplicação para EN - English;
 - Aumentar database com outras api's;
 - Melhoria do css e uso de framework;
+- Adicionar favicon;
 - Aumentar complexidade e melhoria da aplicação.
 
