@@ -14,11 +14,11 @@ Ele utiliza a [GitHub Search Issues API](https://docs.github.com/en/rest/search/
 
 ---
 ## Próximos passos
-- Filtragem por relevância ou data de atualização.
-- Filtragem por severidade
-- Detalhamento da issue
-- Tradução da aplicação para EN - English
-- Aumentar database com outras api's
-- Melhoria do css e uso de framework
-- Aumentar complexidade da aplicação
+- Filtragem por relevância ou data de atualização;
+- Filtragem por severidade;
+- Detalhamento da issue;
+- Tradução da aplicação para EN - English;
+- Aumentar database com outras api's;
+- Melhoria do css e uso de framework;
+- Aumentar complexidade e melhoria da aplicação.
 
