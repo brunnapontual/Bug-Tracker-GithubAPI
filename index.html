@@ -6,27 +6,43 @@
   <title>Bug Tracker</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+
+  <link rel="manifest" href="manifest.json">
+  <meta name="theme-color" content="#000000">
 </head>
 <body>
   <div class="container">
     <header>
       <div class="logo">
         <div class="mark"></div>
-        <h1>Bug Tracker  – Open Issues (GitHub)</h1>
+        <h1>Bug Tracker – Open Issues (GitHub)</h1>
       </div>
       <p class="tagline">Busque bugs e issues abertos por linguagem, ferramenta ou framework (GitHub Issues)</p>
     </header>
 
     <section class="search">
-      <input type="text" id="searchInput" placeholder="Digite uma tecnologia, framework (ex: React, Rxdb, Node)...">
-      <button onclick="searchBugs()">Buscar</button>
-    </section>
+  <input type="text" id="searchInput" placeholder="Digite uma tecnologia, framework (ex: React, Rxdb, Node)...">
+  <button onclick="searchBugs()">Buscar</button>
+  <button id="cameraBtn">Escanear repositório</button>
+</section>
 
-    <section id="results" class="grid"></section>
+<div id="qrReader" style="display:none; margin-top:20px;">
+  <video id="qrVideo" style="width:100%; max-width:400px; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,.3);"></video>
+  <p style="text-align:center; color:#555;">Aponte a câmera para o QR code do repositório GitHub</p>
+</div>
+
+<section id="results" class="grid"></section>
+
   </div>
 
   <footer>
-    <p>Fonte: <a href="https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-issues-and-pull-requests" target="_blank" rel="noreferrer">GitHub Search Issues API</a> • Sem token (limite público ~60 req/h)</a></p>
+    <p>Fonte: 
+      <a href="https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-issues-and-pull-requests" 
+         target="_blank" rel="noreferrer">
+        GitHub Search Issues API
+      </a> 
+      • Sem token (limite público ~60 req/h)
+    </p>
   </footer>
 
   <script src="app.js"></script>
