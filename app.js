@@ -6,10 +6,8 @@ async function searchBugs(repoOrQuery) {
 
   let url;
   if (query.includes("/")) {
-    // Ex: "facebook/react"
     url = `https://api.github.com/repos/${query}/issues?state=open`;
   } else {
-    // Busca geral por termo
     url = `https://api.github.com/search/issues?q=${query}+is:issue+is:open`;
   }
 
@@ -18,7 +16,7 @@ async function searchBugs(repoOrQuery) {
   const results = document.getElementById("results");
   results.innerHTML = "";
 
-  const issues = data.items || data; // dependendo da resposta
+  const issues = data.items || data; 
   if (issues && issues.length > 0) {
     issues.slice(0, 9).forEach(issue => {
       const card = document.createElement("div");
@@ -39,8 +37,6 @@ function setSearch(term) {
   searchBugs();
 }
 
-/* ------------------------- Função da Câmera / QR ------------------------- */
-
 let qrScanner;
 document.getElementById("cameraBtn").addEventListener("click", async () => {
   const qrReader = document.getElementById("qrReader");
@@ -55,7 +51,6 @@ document.getElementById("cameraBtn").addEventListener("click", async () => {
       qrScanner.stop();
       qrReader.style.display = "none";
 
-      // Limpa e processa a URL lida
       const repoUrl = result.data.trim();
       const match = repoUrl.match(/github\.com\/([^/]+\/[^/]+)/);
       if (match) {
@@ -70,6 +65,12 @@ document.getElementById("cameraBtn").addEventListener("click", async () => {
   );
 
   qrScanner.start();
+});
+document.getElementById("closeCameraBtn").addEventListener("click", () => {
+  if (qrScanner) {
+    qrScanner.stop();
+  }
+  document.getElementById("qrReader").style.display = "none";
 });
 
 if ("serviceWorker" in navigator) {

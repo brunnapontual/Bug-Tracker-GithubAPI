@@ -6,6 +6,7 @@
   <title>Bug Tracker</title>
   <link rel="stylesheet" href="style.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css">
+  <link rel="manifest" href="manifest.json">
 
   <link rel="manifest" href="manifest.json">
   <meta name="theme-color" content="#000000">
@@ -29,12 +30,13 @@
 <div id="qrReader" style="display:none; margin-top:20px;">
   <video id="qrVideo" style="width:100%; max-width:400px; border-radius:12px; box-shadow:0 0 20px rgba(0,0,0,.3);"></video>
   <p style="text-align:center; color:#555;">Aponte a câmera para o QR code do repositório GitHub</p>
+  <button id="closeCameraBtn" style="display:block; margin:10px auto; padding:8px 16px; border:none; border-radius:8px; background:#f44336; color:white; cursor:pointer;">
+    Fechar câmera
+  </button>
 </div>
-
 <section id="results" class="grid"></section>
 
   </div>
-
   <footer>
     <p>Fonte: 
       <a href="https://docs.github.com/en/rest/search/search?apiVersion=2022-11-28#search-issues-and-pull-requests" 
